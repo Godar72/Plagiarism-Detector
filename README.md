@@ -24,13 +24,6 @@ Benefit: This creates a canonical representation of the code, ensuring that the 
 Application: The tool uses malloc and free to dynamically allocate memory for file buffers and pointer arrays.
 Benefit: Allows the program to handle files of varying sizes efficiently without wasting RAM.
 
-## Efficiency Analysis
-   Feature               Naive Implementation     Current Implementation
-Search Algorithm          Sequential Search           Binary Search
-    Sorting                     None                    Quick Sort
- Time Complexity              O(N x M)                  O(N log M)
-  Performance            Slow for large files        High Performance
-
   ## Installation & Usage
   ### Prerequisites
   GCC Compiler (or any standard C compiler)
