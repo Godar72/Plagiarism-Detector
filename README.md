@@ -30,10 +30,12 @@ Benefit: Allows the program to handle files of varying sizes efficiently without
 
   ### Compilation
   To compile the project, run the following command in your terminal:
+  
   gcc -o PlagiarismDetector PlagiarismDetector.c
 
   ### Running the Detector
   Pass two or more C files as arguments to compare them:
+  
   PlagiarismDetector file1.cpp file2.cpp
 
   ## How It Works
