@@ -1,9 +1,14 @@
-# DSA in C Based Source Code Plagiarism Detector
+# DSA in C Based Plagiarism Detector
 
 ## Overview
-Plagiarism Detector is a high-performance command-line tool written in C that analyzes multiple source files to detect code similarity. Unlike simple string matching, this tool uses structural analysis to identify overlapping code sequences, making it effective even if whitespace or comments are modified.
+Plagiarism Detector is a high-performance command-line tool written in C designed to analyze multiple source files and documents to detect similarity. Unlike simple string matching, this tool uses structural analysis to identify overlapping content, making it effective even if whitespace or formatting is modified.
 
-It is designed for efficiency, utilizing advanced searching and sorting algorithms to handle file comparisons rapidly.
+It supports C source code files natively and includes integration with pdftotext to enable the comparison of PDF documents.
+
+## Key Features
+1. Multi-Format Support: Capable of analyzing raw .c code files and .pdf documents (via pdftotext integration).
+2. High Efficiency: utilizes advanced Quick Sort and Binary Search algorithms to handle comparisons rapidly.
+3. Noise Filtering: Automatically normalizes text by removing comments, extra whitespace, and case differences.
 
 ## Data Structures & Algorithms Used
 This project demonstrates the practical application of several core Data Structures and Algorithms (DSA) concepts to solve a real-world problem:
@@ -27,6 +32,7 @@ Benefit: Allows the program to handle files of varying sizes efficiently without
   ## Installation & Usage
   ### Prerequisites
   GCC Compiler (or any standard C compiler)
+  pdftotext.exe (for any pdf files)
 
   ### Compilation
   To compile the project, run the following command in your terminal:
@@ -37,9 +43,10 @@ Benefit: Allows the program to handle files of varying sizes efficiently without
   Pass two or more C files as arguments to compare them:
   
   PlagiarismDetector file1.cpp file2.cpp
+  PlagiarismDetector file1.pdf file2.pdf
 
   ## How It Works
-  1. Read & Preprocess: The tool reads files into memory and normalizes them (removing noise like comments/spaces).
-  2. Tokenization: It splits the normalized code into fixed-size "windows" of characters.
-  3. Sort & Search: It sorts the windows of one file and uses binary search to find intersections with the second file.
-  4. Scoring: It calculates a similarity percentage based on the number of matching windows versus the total code length.
+  1. File Conversion: If a file is a PDF, the tool invokes pdftotext to extract raw text content.
+  2. Normalization: The text is normalized (removing noise, comments, and converting to lowercase).
+  3. Tokenization & Sorting: The normalized text is split into "windows" and sorted using Quick Sort.
+  4. Comparison: The tool utilizes Binary Search to find intersections between the documents and calculates a similarity percentage.
